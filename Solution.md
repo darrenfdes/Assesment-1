@@ -6,9 +6,16 @@ Flow
 4. Once it works create the basic test to mock the existing mocking structure in the calculate commision method.
 5. Use a real input in test case and modify the service method to fix it.
 6. Start edge cases for request val;idation. Do not add client side validation(assuming)
-7. Created a separate Validator service that is more modular and can be extended or replaced in the future.
-8. Add fluent validation from the start even though it's simple?
+7. options - 1. a separate Validator service that is more modular and can be extended or replaced in the future.2. fluent validation
+8. Add fluent validation from the start even though it's simple. Let's it scale no tighly coupled vlidator service
 
 Todo:
 
-issue with runnign jest tests not important as react doesn't drive tdd in this case
+Added someking of graceful error handling
+simple solution -> add a exception middle where and fixed error results as the application scales
+
+I need to display the error message on the frontend
+
+DTOs are fairly compact -> include the breakdown and refator the ui in future
+
+issue with running jest tests not important as react doesn't drive tdd in this case

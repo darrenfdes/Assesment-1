@@ -2,6 +2,7 @@
 namespace AvalphaTechnologies.CommissionCalculator
 {
     using AvalphaTechnologies.CommissionCalculator.Services;
+    using AvalphaTechnologies.CommissionCalculator.Validators;
     using FluentValidation;
     using FluentValidation.AspNetCore;
 
