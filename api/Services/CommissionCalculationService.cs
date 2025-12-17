@@ -1,6 +1,6 @@
 namespace AvalphaTechnologies.CommissionCalculator.Services
 {
-    public class CommissionCalculationService
+    public class CommissionCalculationService : ICommissionCalculationService
     {
 
     }
