@@ -14,7 +14,24 @@ namespace AvalphaTechnologies.CommissionCalculator.Controllers
         [HttpPost]
         public IActionResult Calculate(CommissionCalculationRequest calculationRequest)
         {
-            return Ok(_commisionCalculationService.CalculateCommission(calculationRequest.LocalSalesCount, calculationRequest.ForeignSalesCount, calculationRequest.AverageSaleAmount));
+            try
+            {
+                var result = _commissionCalculationService.CalculateCommission(
+                    calculationRequest.LocalSalesCount,
+                    calculationRequest.ForeignSalesCount,
+                    calculationRequest.AverageSaleAmount);
+
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(
+            StatusCodes.Status500InternalServerError,
+            new ErrorResponse
+            {
+                Message = "An unexpected error occurred while calculating commission."
+            });
+            }
         }
     }
 }

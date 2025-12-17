@@ -11,14 +11,19 @@ export async function post(endpoint, body) {
   });
 
   if (!response.ok) {
-    let errorMessage = "Request failed";
-    try {
-      const error = await response.json();
-      errorMessage = error?.message ?? errorMessage;
-    } catch (error) {
-      console.error("post: ", error);
+    const error = await response.json();
+
+    if (error.message) {
+      throw new Error(error.message);
     }
-    throw new Error(errorMessage);
+
+    if (error.errors) {
+      const firstField = Object.keys(error.errors)[0];
+      const firstMessage = error.errors[firstField][0];
+      throw new Error(firstMessage);
+    }
+
+    throw new Error("Something went wrong");
   }
 
   return response.json();

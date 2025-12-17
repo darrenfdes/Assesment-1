@@ -42,6 +42,10 @@ function App() {
         competitorCommission: result.competitorCommissionAmount,
       });
     } catch (error) {
+      setResults({
+        avalphaTechnologiesCommission: 0,
+        competitorCommission: 0,
+      });
       alert(error.message);
     } finally {
       setIsLoading(false);

@@ -8,6 +8,7 @@ Flow
 6. Start edge cases for request val;idation. Do not add client side validation(assuming)
 7. options - 1. a separate Validator service that is more modular and can be extended or replaced in the future.2. fluent validation
 8. Add fluent validation from the start even though it's simple. Let's it scale no tighly coupled vlidator service
+9. Added a fixed error response type : simple for now jsut the message but later can be coupled with globalexception middleware and include the stacktrace in dev mode
 
 Todo:
 
@@ -19,3 +20,5 @@ I need to display the error message on the frontend
 DTOs are fairly compact -> include the breakdown and refator the ui in future
 
 issue with running jest tests not important as react doesn't drive tdd in this case
+
+Error response
