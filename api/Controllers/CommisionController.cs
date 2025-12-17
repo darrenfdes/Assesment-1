@@ -6,9 +6,9 @@ namespace AvalphaTechnologies.CommissionCalculator.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CommisionController(ICommissionCalculationService commisionCalculationService) : ControllerBase
+    public class CommisionController(ICommissionCalculationService commissionCalculationService) : ControllerBase
     {
-        private readonly ICommissionCalculationService _commisionCalculationService = commisionCalculationService;
+        private readonly ICommissionCalculationService _commissionCalculationService = commissionCalculationService;
 
         [ProducesResponseType(typeof(CommissionCalculationResponse), 200)]
         [HttpPost]
@@ -23,7 +23,7 @@ namespace AvalphaTechnologies.CommissionCalculator.Controllers
 
                 return Ok(result);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(
             StatusCodes.Status500InternalServerError,

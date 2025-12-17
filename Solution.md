@@ -15,10 +15,13 @@ Todo:
 Added someking of graceful error handling
 simple solution -> add a exception middle where and fixed error results as the application scales
 
-I need to display the error message on the frontend
-
 DTOs are fairly compact -> include the breakdown and refator the ui in future
 
+Display per-field validation errors in the UI
+
+Make commission rates configurable
+
+Issues
 issue with running jest tests not important as react doesn't drive tdd in this case
 
 Error response
