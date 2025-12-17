@@ -18,9 +18,9 @@ export async function post(endpoint, body) {
     }
 
     if (error.errors) {
-      const firstField = Object.keys(error.errors)[0];
-      const firstMessage = error.errors[firstField][0];
-      throw new Error(firstMessage);
+      const messages = Object.values(error.errors).flat().join(" ");
+
+      throw new Error(messages);
     }
 
     throw new Error("Something went wrong");

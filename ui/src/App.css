@@ -7,7 +7,7 @@
 .App {
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Header Styles */
@@ -140,7 +140,7 @@
 }
 
 .calculate-btn.loading::after {
-  content: '';
+  content: "";
   position: absolute;
   right: 1rem;
   top: 50%;
@@ -264,19 +264,19 @@
     padding: 1.5rem;
     margin: 0 1rem;
   }
-  
+
   .company-title {
     font-size: 2rem;
   }
-  
+
   .App-logo {
     height: 60px;
   }
-  
+
   .result-amount {
     font-size: 2rem;
   }
-  
+
   .results-grid {
     gap: 1rem;
   }
@@ -286,18 +286,27 @@
   .App-header {
     padding: 1.5rem 0;
   }
-  
+
   .company-title {
     font-size: 1.5rem;
   }
-  
+
   .calculator-container {
     padding: 1rem;
     border-radius: 15px;
   }
-  
+
   .form-group input,
   .calculate-btn {
     padding: 0.8rem;
   }
+}
+
+.error-message {
+  background-color: #fdecea;
+  color: #611a15;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
 }

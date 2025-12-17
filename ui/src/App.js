@@ -17,6 +17,8 @@ function App() {
 
   const [isLoading, setIsLoading] = useState(false);
 
+  const [errorMessage, setErrorMessage] = useState(null);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -28,6 +30,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setErrorMessage(null);
 
     try {
       const result = await calculateCommission({
@@ -46,7 +49,8 @@ function App() {
         avalphaTechnologiesCommission: 0,
         competitorCommission: 0,
       });
-      alert(error.message);
+
+      setErrorMessage(error.message);
     } finally {
       setIsLoading(false);
     }
@@ -65,8 +69,9 @@ function App() {
           <h2 className="app-subtitle">Commission Calculator</h2>
         </div>
       </header>
-
       <main className="main-content">
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
+
         <div className="calculator-container">
           <div className="form-section">
             <h3>Sales Information</h3>
