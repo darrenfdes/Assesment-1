@@ -1,6 +1,7 @@
 import logo from "./logo.png";
 import "./App.css";
 import { calculateCommission } from "./services/commissionApi";
+import { formatCurrency } from "./utils/formatter";
 import { useState } from "react";
 
 function App() {
@@ -139,7 +140,7 @@ function App() {
                   </span>
                 </div>
                 <div className="result-amount">
-                  £{results.avalphaTechnologiesCommission}
+                  {formatCurrency(results.avalphaTechnologiesCommission)}
                 </div>
               </div>
 
@@ -151,7 +152,7 @@ function App() {
                   </span>
                 </div>
                 <div className="result-amount">
-                  £{results.competitorCommission}
+                  {formatCurrency(results.competitorCommission)}
                 </div>
               </div>
             </div>
@@ -161,12 +162,10 @@ function App() {
                 <p className="advantage-text">
                   Avalpha Technologies advantage:
                   <strong>
-                    {" "}
-                    £
-                    {(
+                    {formatCurrency(
                       results.avalphaTechnologiesCommission -
-                      results.competitorCommission
-                    ).toFixed(2)}
+                        results.competitorCommission
+                    )}
                   </strong>
                 </p>
               </div>
