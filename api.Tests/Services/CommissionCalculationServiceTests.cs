@@ -31,5 +31,26 @@ namespace AvalphaTechnologies.CommissionCalculator.Tests.Services
             result.CompetitorCommissionAmount
                   .Should().Be(326.5m);
         }
+
+        [Fact]
+        public void CalculateCommission_ZeroSales_ReturnZeroCommission()
+        {
+            // Given
+            var service = new CommissionCalculationService();
+            int localSalesCount = 0;
+            int foreignSalesCount = 0;
+            decimal averageSaleAmount = 1000m;
+
+            // When
+            var result = service.CalculateCommission(
+                localSalesCount,
+                foreignSalesCount,
+                averageSaleAmount);
+
+            // Then
+            result.AvalphaTechnologiesCommissionAmount.Should().Be(0m);
+            result.CompetitorCommissionAmount.Should().Be(0m);
+        }
+
     }
 }
