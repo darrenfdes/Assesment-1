@@ -1,7 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AvalphaTechnologies.CommissionCalculator.Dtos;
+using AvalphaTechnologies.CommissionCalculator.Validators;
+using FluentValidation.TestHelper;
+using Xunit;
 
 namespace api.Tests.Services
 {
