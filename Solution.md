@@ -10,18 +10,22 @@ Flow
 8. Add fluent validation from the start even though it's simple. Let's it scale no tighly coupled vlidator service
 9. Added a fixed error response type : simple for now jsut the message but later can be coupled with globalexception middleware and include the stacktrace in dev mode
 
-Todo:
+Todo/Future scope:
 
-Added someking of graceful error handling
-simple solution -> add a exception middle where and fixed error results as the application scales
+Improve graceful error handling :
+A simple next step would be adding centralized exception middleware with consistent error responses as the application scales.
 
-DTOs are fairly compact -> include the breakdown and refator the ui in future
+Enhance DTO structure:
+DTOs are intentionally compact/unchanged for now.
+A future improvement would include a detailed commission breakdown and refactor the UI to display it.
 
-Display per-field validation errors in the UI
+UI validation feedback
+Display per-field validation errors instead of showing a single message.
 
 Make commission rates configurable
 
-Issues
-issue with running jest tests not important as react doesn't drive tdd in this case
+Issues :
+There were some issues encountered while running Jest tests.
+This was not critical, as React was not driving the development using TDD in this case.
 
-Error response
+Error responses are currently simple by design to keep the system easy to reason about.
