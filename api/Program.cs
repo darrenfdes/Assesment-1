@@ -2,6 +2,8 @@
 namespace AvalphaTechnologies.CommissionCalculator
 {
     using AvalphaTechnologies.CommissionCalculator.Services;
+    using FluentValidation;
+    using FluentValidation.AspNetCore;
 
     public class Program
     {
@@ -10,6 +12,9 @@ namespace AvalphaTechnologies.CommissionCalculator
             var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddScoped<ICommissionCalculationService, CommissionCalculationService>();
+
+            builder.Services.AddFluentValidationAutoValidation();
+            builder.Services.AddValidatorsFromAssemblyContaining<CommissionCalculationRequestValidator>();
 
             builder.Services.AddCors(options =>
             {
