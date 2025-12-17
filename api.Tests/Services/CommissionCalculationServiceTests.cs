@@ -8,7 +8,7 @@ namespace AvalphaTechnologies.CommissionCalculator.Tests.Services
     public class CommissionCalculationServiceTests
     {
         [Fact]
-        public void CalculateCommission_ShouldReturnExpectedResult()
+        public void CalculateCommission_UseValidInputs_ReturnCorrectCommissionAmounts()
         {
             // Given
             var service = new CommissionCalculationService();
@@ -17,12 +17,19 @@ namespace AvalphaTechnologies.CommissionCalculator.Tests.Services
             decimal averageSaleAmount = 1000m;
 
             // When
-            var result = service.CalculateCommission(localSalesCount, foreignSalesCount, averageSaleAmount);
+            var result = service.CalculateCommission(
+                localSalesCount,
+                foreignSalesCount,
+                averageSaleAmount);
 
             // Then
             result.Should().NotBeNull();
-            result.AvalphaTechnologiesCommissionAmount.Should().Be(999);
-            result.CompetitorCommissionAmount.Should().Be(100);
+
+            result.AvalphaTechnologiesCommissionAmount
+                  .Should().Be(2050m);
+
+            result.CompetitorCommissionAmount
+                  .Should().Be(326.5m);
         }
     }
 }
